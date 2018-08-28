@@ -204,11 +204,34 @@ void QCPLayerable::parentPlotInitialized(QCustomPlot *parentPlot)
 }
 
 
+QCP::Interaction QCPLayerable::selectionCategory() const
+{
+    return QCP::iSelectOther;
+}
 
 
+QRect QCPLayerable::clipRect() const
+{
+    if(mParentPlot)
+        return mParentPlot->viewport();
+    else
+        return QRect();
+}
 
 
+void QCPLayerable::selectEvent(QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)
+{
+    Q_UNUSED(event);
+    Q_UNUSED(additive);
+    Q_UNUSED(details);
+    Q_UNUSED(selectionStateChanged);
+}
 
+
+void QCPLayerable::deselectEvent(bool *selectionStateChanged)
+{
+    Q_UNUSED(selectionStateChanged);
+}
 
 
 
