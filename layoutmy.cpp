@@ -1,4 +1,5 @@
-﻿#include "layoutmy.h"
+﻿
+#include "layoutmy.h"
 
 #include "core.h"
 
@@ -18,3 +19,4 @@ QCPMarginGroup::~QCPMarginGroup()
 {
     clear();
 }
+
